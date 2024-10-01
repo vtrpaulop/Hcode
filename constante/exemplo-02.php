@@ -4,7 +4,7 @@
 		'127.0.0.1',
 		'root',
 		'password',
-		'test'
+		'teste'
 	]);
 
 print_r(BANCO_DE_DADOS);
