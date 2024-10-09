@@ -10,6 +10,7 @@ foreach ($meses as $index => $mes) {
 
 	echo "O indice é: " . $index . "<br>";
 	echo "O mês é: " . $mes . "<br><br>";
+	
 }
 
 

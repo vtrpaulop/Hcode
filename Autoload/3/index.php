@@ -5,6 +5,8 @@ use Helper\ExemploHelper;
 use Validator\ExemploValidator;
 use Pessoa\Pessoa;
 use Animais\Animais;
+use Carro\Carro;
+use Mouse\Mouse;
 
 
 
@@ -21,6 +23,8 @@ $ExemploHelper = new ExemploHelper();
 $ExemploValidator = new ExemploValidator();
 $Pessoa = new Pessoa(); 
 $Animais = new Animais();
+$Carro = new Carro();
+$Mouse = new Mouse();
 
 
 
