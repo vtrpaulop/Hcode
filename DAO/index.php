@@ -39,9 +39,17 @@ $aluno->insert();*/
 
 echo $aluno . "<br><br>";
 
-echo "Carrega um usuario usando UPDATE<br>";
+/*echo "Carrega um usuario usando UPDATE<br>";
 $usuario = new Usuario();
 $usuario->loadById(32);
 $usuario->update("professor","123456");
+echo $usuario . "<br><br>";*/
+
+echo "<br>";
+
+echo "Carrega um usuario usando DELETE<br>";
+$usuario = new Usuario();
+$usuario->loadById(32);
+$usuario->delete();
 echo $usuario . "<br><br>";
 
