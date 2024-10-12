@@ -1,6 +1,6 @@
 <?php
 
-$link = "https://www.google.cm/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png";
+$link = "https://conteudo.imguol.com.br/c/home/layout/vueland/icons/brand/uol-logo-full.svg?v9";
 $content = file_get_contents($link);
 
 $parse = parse_url($link);
