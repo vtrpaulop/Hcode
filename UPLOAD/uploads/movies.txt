@@ -1,0 +1,51 @@
+<?php
+
+require_once('vendor/autoload.php');
+
+$client = new \GuzzleHttp\Client();
+$token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOWI4YzNhOWE0NjYwZmNhYWEwMWRkYWY2ZWE5OTMxMCIsIm5iZiI6MTcyODQ0MjQ0MS40NTY3OTcsInN1YiI6IjY3MDUxZTZlOThkZjhlYTAxNTFkNGIxMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.X9UGhWaP2KNCU1AKEXnNTM-X8hTD5GlSabBiWaU5Czo';
+
+$movies = []; 
+$maxPages = 100; 
+$page = 1; 
+
+do {
+    try {
+        
+        $response = $client->request('GET', "https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&page={$page}", [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $token,
+                'accept' => 'application/json',
+            ],
+        ]);
+
+        
+        $moviesData = json_decode($response->getBody(), true);
+
+        
+        foreach ($moviesData['results'] as $movie) {
+            $movies[] = [
+                'id' => $movie['id'],
+                'title' => $movie['title'],
+                'release_date' => $movie['release_date'],
+                'overview' => $movie['overview'],
+            ];
+        }
+
+        echo "Página {$page} processada.\n"; 
+
+       
+        $page++;
+    } catch (Exception $e) {
+       
+        echo "Erro ao buscar filmes na página {$page}: " . $e->getMessage();
+        break; 
+    }
+} while ($page <= $moviesData['total_pages'] && $page <= $maxPages); 
+
+$json = json_encode($movies, JSON_PRETTY_PRINT);
+
+
+header('Content-Type: application/json');
+echo $json;
+
