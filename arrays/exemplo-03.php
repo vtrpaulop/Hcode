@@ -12,7 +12,12 @@ array_push($pessoas, array(
 'idade'=>30
 ));
 
-print_r($pessoas[0]['nome']);
+array_push($pessoas, array(
+    'nome' => 'YAYA',
+    'idade'=>3
+    ));
+
+print_r($pessoas[2]['nome']);
 
 
  ?>
