@@ -1,0 +1,13 @@
+{
+    "name": "vtr/composer",
+    "type": "dev",
+    "authors": [
+        {
+            "name": "vtrpaulop",
+            "email": "vtrpaulop@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "1.0.*"
+    }
+}
