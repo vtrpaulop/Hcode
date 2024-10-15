@@ -1,0 +1,19 @@
+{
+    "name": "vtr/email",
+    "autoload": {
+        "psr-4": {
+            "Vtr\\Email\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "vtrpaulop",
+            "email": "vtrpaulop@gmail.com"
+        }
+    ],
+    "require": {
+
+        "phpmailer/phpmailer": "~6.0"
+
+    }
+}
