@@ -20,3 +20,7 @@ $app->get('/hello/{name}', function ($request, $response, $args) {
 });
 
 $app->run();
+
+
+//Não esquecer de tirar os comentários em
+//D:\xampp\apache\conf\extra\httpd-vhosts.conf
